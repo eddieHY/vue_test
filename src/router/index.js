@@ -9,6 +9,8 @@ import Anchor from '@/view/Anchor'
 import ProgressBar from '@/view/ProgressBar'
 import Error from '@/components/Error'
 import Lottie from '@/view/Lottie'
+import Goods from '@/view/Goods'
+import BuyCart from '@/view/BuyCart'
 
 Vue.use(Router)
 
@@ -54,6 +56,16 @@ export default new Router({
       path: '/Lottie',
       name: 'Lottie',
       component: Lottie
+    },
+    {
+      path: '/Goods',
+      name: 'Goods',
+      component: Goods
+    },
+    {
+      path: '/BuyCart',
+      name: 'BuyCart',
+      component: BuyCart
     },
     {
       path: 'Error',
