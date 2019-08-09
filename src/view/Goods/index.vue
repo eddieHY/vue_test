@@ -2,8 +2,11 @@
   <!--加减商品-->
   <div class="cartControl-wrapper">
     <!--在父组件监听到子组件触发的cart-add事件-->
-    <cart-control :food="food" @cart-add="handlecartAdd"></cart-control>
-    <shop-cart class="shop-cart__position"/>
+    <cart-control :food="food"
+                  @cart-add="handlecartAdd"
+                  class="cart-control"></cart-control>
+    <shop-cart class="shop-cart__position"
+               ref="shopCart" />
   </div>
 </template>
 
@@ -36,8 +39,19 @@ export default {
 
 <style>
 .shop-cart__position {
-  height: 60px;
-  width: 60px;
+  /* height: 60px;
+  width: 60px; */
+  position: absolute;
+  bottom: 500px;
+  left: 500px;
+  border: 1px solid red;
 }
-
+.cart-control {
+  position: absolute;
+  left: 600px;
+  /* height: 40px;
+  width: 40px; */
+  top: 600px;
+  border: 1px solid blue;
+}
 </style>

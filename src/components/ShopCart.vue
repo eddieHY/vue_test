@@ -24,6 +24,7 @@ export default {
   methods: {
     // 当触发drop方法时小球开始掉落
     drop (el) {
+      console.log('==drop===', el)
       for (let i = 0; i < this.balls.length; i++) { // 遍历这5个小球
         let ball = this.balls[i]
         if (!ball.show) { // 当小球显示状态为隐藏时
@@ -42,8 +43,11 @@ export default {
         let ball = this.balls[count]
         if (ball.show) {
           let rect = ball.el.getBoundingClientRect() // getBoundingClientRect()获取小球相对于视窗的位置，屏幕左上角坐标为0，0
-          let x = rect.left - 32 // 小球x方向位移= 小球距离屏幕左侧的距离-外层盒子距离水平的距离
-          let y = -(window.innerHeight - rect.top - 22) // 负数，因为是从左上角向下
+          console.log('===rect====', rect)
+          let x = -(rect.right - 120) // 小球x方向位移= 小球距离屏幕左侧的距离-外层盒子距离水平的距离
+          console.log('===x====', x)
+          let y = (rect.top - 22) // 负数，因为是从左上角向下
+          console.log('===y====', y)
           el.style.display = ''
           el.style.webkitTransform = `translate3d(0,${y}px,0)` // 设置外层盒子，即小球垂直方向的位移
           el.style.transform = `translate3d(0,${y}px,0)`
@@ -78,6 +82,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
+.ball-container {
+  .ball {
+    position: fixed;
+    right: 32px;
+    top: 22px;
+    z-index: 200;
+    // transition: all 5s cubic-bezier(0.49, -0.29, 0.75, 0.41);
+    transition: all .5s cubic-bezier(0.39, 0.58, 0.57, 1);
+    // border: 1px solid black;
 
+    .inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: rgb(0, 160, 220);
+      transition: all .5s linear;
+    }
+  }
+}
 </style>
