@@ -29,7 +29,7 @@
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import animate from 'animate.css'
+// import animate from 'animate.css'
 export default {
   data () {
     return {

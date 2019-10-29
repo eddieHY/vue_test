@@ -19,6 +19,7 @@ import Four from '@/view/Animation/Four'
 import Five from '@/view/Animation/Five'
 import Six from '@/view/Animation/Six'
 import Seven from '@/view/Animation/Seven'
+import SwitchTabs from '@/view/SwitchTabs'
 
 Vue.use(Router)
 
@@ -124,6 +125,11 @@ export default new Router({
       path: '/Second',
       name: 'Second',
       component: Second
+    },
+    {
+      path: '/SwitchTabs',
+      name: 'SwitchTabs',
+      component: SwitchTabs
     },
     {
       path: 'Error',
